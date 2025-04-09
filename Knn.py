@@ -5,7 +5,7 @@ import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 
-st.title('การจำแนกข้อมูลด้วยเทคนิค Machine Learning 💀💀💀')
+st.title('การจำแนกข้อมูลด้วยเทคนิค Machine Learning 🌹🌹🌹')
 #st.image("./img/kiti.jpg")
 col1,col2,col3 = st.columns(3)
 
@@ -86,10 +86,13 @@ if st.button("ทำนายผล"):
    out=Knn_model.predict(x_input)
 
    if out[0] == 'Setosa':
+    st.write('Setosa🌹')
     st.image("./img/iris1.jpg")
-   elif out[0] == 'Versicolor':       
+   elif out[0] == 'Versicolor':
+    st.write('Versicolor🌹')       
     st.image("./img/iris2.jpg")
    else:
+    st.write('Verginiga🌹')
     st.image("./img/iris3.jpg")
 else:
     st.write("ไม่ทำนาย")
