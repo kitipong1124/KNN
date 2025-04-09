@@ -22,7 +22,7 @@ with col3:
 
 html_7 = """
 <div style="background-color:#fec8ff;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
-<center><h2>ข้อมูล iris หรือข้อมูลดอกไม้สำหรับทำนาย</h2></center>
+<center><h3>ข้อมูล iris หรือข้อมูลดอกไม้สำหรับทำนาย</h3></center>
 </div>
 """
 st.markdown(html_7, unsafe_allow_html=True)
