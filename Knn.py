@@ -1,6 +1,7 @@
 from sklearn.neighbors import KNeighborsClassifier
 import streamlit as st
 import pandas as pd
+import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -34,3 +35,11 @@ dt = pd.read_csv("./data/iris-3.csv")
 st.write(dt.head(10))
 st.subheader("ข้อมูลส่วนสุดท้าย 10 แถว")
 st.write(dt.tail(10))
+
+st.subheader("กราฟการกระจายระหว่าง Sepal Length และ Sepal Width")
+fig, ax = plt.subplots()
+sns.scatterplot(data=dt, x="sepal_length", y="sepal_width", hue="species", ax=ax)
+st.pyplot(fig)
+st.subheader("จำนวนของแต่ละ Species")
+species_counts = dt["species"].value_counts()
+st.bar_chart(species_counts)
