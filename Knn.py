@@ -5,4 +5,4 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 st.title('การจำแนกข้อมูลด้วยเทคนิค Machine Learning')
-st.header('kitipong')
+st.image("./img/kiti.jpg")
