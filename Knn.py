@@ -36,10 +36,22 @@ st.write(dt.head(10))
 st.subheader("ข้อมูลส่วนสุดท้าย 10 แถว")
 st.write(dt.tail(10))
 
-st.subheader("กราฟการกระจายระหว่าง Sepal Length และ Sepal Width")
+# สถิติพื้นฐาน
+st.subheader("📈 สถิติพื้นฐานของข้อมูล")
+st.write(dt.describe())
+
+# การเลือกแสดงกราฟตามฟีเจอร์
+st.subheader("📌 เลือกฟีเจอร์เพื่อดูการกระจายข้อมูล")
+feature = st.selectbox("เลือกฟีเจอร์", dt.columns[:-1])
+
+# วาดกราฟ boxplot
+st.write(f"### 🎯 Boxplot: {feature} แยกตามชนิดของดอกไม้")
 fig, ax = plt.subplots()
-sns.scatterplot(data=dt, x="sepal_length", y="sepal_width", hue="species", ax=ax)
+sns.boxplot(data=dt, x='variety', y=feature, ax=ax)
 st.pyplot(fig)
-st.subheader("จำนวนของแต่ละ Species")
-species_counts = dt["species"].value_counts()
-st.bar_chart(species_counts)
+
+# วาด pairplot
+if st.checkbox("แสดง Pairplot (ใช้เวลาประมวลผลเล็กน้อย)"):
+    st.write("### 🌺 Pairplot: การกระจายของข้อมูลทั้งหมด")
+    fig2 = sns.pairplot(dt, hue='variety')
+    st.pyplot(fig2)
